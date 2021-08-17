@@ -1,0 +1,10 @@
+{
+  "danger": {
+    "subtitle": "sekiro_kanji.subtitle.danger",
+    "sounds": [ "sekiro_kanji:danger" ]
+  },
+  "enemy_alert": {
+    "subtitle": "sekiro_kanji.subtitle.enemy_alert",
+    "sounds": [ "sekiro_kanji:enemy_alert" ]
+  }
+}

@@ -7,7 +7,7 @@ import com.carrot_of_rivia.sekiro_kanji.utils.Signs;
 import net.minecraft.entity.Entity;
 import net.minecraftforge.fml.network.PacketDistributor;
 
-public class SendToClient {
+public class ServerToClient {
     /*
      Send a packet from server to client side to draw the signs and possibly play sound effects
      YOU MUST CALL IT FROM A SERVER SIDE!

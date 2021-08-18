@@ -1,6 +1,6 @@
 package com.carrot_of_rivia.sekiro_kanji.events;
 
-import com.carrot_of_rivia.sekiro_kanji.api.SendToClient;
+import com.carrot_of_rivia.sekiro_kanji.api.ServerToClient;
 import com.carrot_of_rivia.sekiro_kanji.data.SekiroKanjiCap;
 import com.carrot_of_rivia.sekiro_kanji.data.SekiroKanjiData;
 import com.carrot_of_rivia.sekiro_kanji.utils.ConfigCommon;
@@ -44,7 +44,7 @@ public class ForgeBus {
                     if (playerEntity != null){
                         SekiroKanjiData sekiroKanjiData = livingEntity.getCapability(SekiroKanjiCap.SEKIRO_KANJI_CAP).orElse(new SekiroKanjiData());
                         if(sekiroKanjiData.canSendDangerSign()){
-                            SendToClient.sendDangerSign(playerEntity);
+                            ServerToClient.sendDangerSign(playerEntity);
                             sekiroKanjiData.setDangerMax();
                         }
                     }
@@ -54,7 +54,7 @@ public class ForgeBus {
             if(!ConfigCommon.DISABLE_POISON_SIGN.get() && livingEntity.hasEffect(Effects.POISON)){
                 SekiroKanjiData livingData = livingEntity.getCapability(SekiroKanjiCap.SEKIRO_KANJI_CAP).orElse(new SekiroKanjiData());
                 if(livingData.canSendPoisonSign()) {
-                    SendToClient.sendPoisonSign(livingEntity);
+                    ServerToClient.sendPoisonSign(livingEntity);
                     livingData.setPoisonMax();
                 }
             }
@@ -78,7 +78,7 @@ public class ForgeBus {
                     }
                 }
                 if(send){
-                    SendToClient.sendDangerSign(playerEntity);
+                    ServerToClient.sendDangerSign(playerEntity);
                     sekiroKanjiData.setDangerMax();
                 }
             }
@@ -95,7 +95,7 @@ public class ForgeBus {
                 // if a creeper is trying to attack a player, send danger sign to the player
                 SekiroKanjiData sekiroKanjiData = attacker.getCapability(SekiroKanjiCap.SEKIRO_KANJI_CAP).orElse(new SekiroKanjiData());
                 if(sekiroKanjiData.canSendDangerSign()){
-                    SendToClient.sendDangerSign(target);
+                    ServerToClient.sendDangerSign(target);
                     sekiroKanjiData.setDangerMax();
                 }
             }
@@ -103,7 +103,7 @@ public class ForgeBus {
             if(!ConfigCommon.DISABLE_ENEMY_ALERT_SIGN.get()){
                 SekiroKanjiData attackerData = attacker.getCapability(SekiroKanjiCap.SEKIRO_KANJI_CAP).orElse(new SekiroKanjiData());
                 if(attackerData.canSendEnemyAlertSign()){
-                    SendToClient.sendEnemyAlertSign(attacker);
+                    ServerToClient.sendEnemyAlertSign(attacker);
                     attackerData.setEnemyAlertMax();
                 }
             }
@@ -118,7 +118,7 @@ public class ForgeBus {
             if(damageSource.isFire()){
                 SekiroKanjiData livingData = livingEntity.getCapability(SekiroKanjiCap.SEKIRO_KANJI_CAP).orElse(new SekiroKanjiData());
                 if(livingData.canSendBurnSign()){
-                    SendToClient.sendBurnSign(livingEntity);
+                    ServerToClient.sendBurnSign(livingEntity);
                     livingData.setBurnMax();
                 }
             }
@@ -135,7 +135,7 @@ public class ForgeBus {
                     if(livingEntity.hasEffect(Effects.ABSORPTION) && livingEntity.hasEffect(Effects.FIRE_RESISTANCE) && livingEntity.hasEffect(Effects.REGENERATION)){
                         SekiroKanjiData livingData = livingEntity.getCapability(SekiroKanjiCap.SEKIRO_KANJI_CAP).orElse(new SekiroKanjiData());
                         if(livingData.canSendResurrectSign()){
-                            SendToClient.sendResurrectSign(livingEntity);
+                            ServerToClient.sendResurrectSign(livingEntity);
                             livingData.setResurrectMax();
                         }
                     }

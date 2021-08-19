@@ -31,7 +31,7 @@ public class ConfigCommon {
         ForgeConfigSpec.Builder CONFIG_BUILDER = new ForgeConfigSpec.Builder();
 
         CONFIG_BUILDER.push("death_screen");
-        NOOB_CHANCE = CONFIG_BUILDER.comment("The chance of showing 'noob' instead of 'death' in the death screen. Not 'noob' will last 2.5 seconds longer than 'death' on your screen.").defineInRange("noob_chance", 0.1, 0, 1);
+        NOOB_CHANCE = CONFIG_BUILDER.comment("The chance of showing 'noob' instead of 'death' in the death screen. Note 'noob' will last 2.5 seconds longer than 'death' on your screen.").defineInRange("noob_chance", 0.1, 0, 1);
         SHOW_DEATH_TIME = CONFIG_BUILDER.comment("After this time, the 'DEATH' will disapear in your death screen. Unit: tick; 20 ticks = 1 second").defineInRange("show_death_time", 20, 0, Integer.MAX_VALUE);
         DISABLE_DEATH_SCREEN = CONFIG_BUILDER.define("disable_death_screen", false);
         CONFIG_BUILDER.pop();
@@ -41,7 +41,7 @@ public class ConfigCommon {
         RESURRECT_CD = CONFIG_BUILDER.comment("The cool down between entity sending/receiving resurrect sign. Unit: tick; 20 ticks = 1 second").defineInRange("resurrect_cd", 300, 0, Integer.MAX_VALUE);
         POISON_CD = CONFIG_BUILDER.comment("The cool down between entity sending/receiving poison sign. Unit: tick; 20 ticks = 1 second").defineInRange("poison_cd", 300, 0, Integer.MAX_VALUE);
         BURN_CD = CONFIG_BUILDER.comment("The cool down between entity sending/receiving burn_ sign. Unit: tick; 20 ticks = 1 second").defineInRange("burn_cd", 300, 0, Integer.MAX_VALUE);
-        ENEMY_ALERT_CD = CONFIG_BUILDER.comment("The cool down between entity sending/receiving enemy alert sign. Unit: tick; 20 ticks = 1 second").defineInRange("enemy_alert_cd", 1200, 0, Integer.MAX_VALUE);
+        ENEMY_ALERT_CD = CONFIG_BUILDER.comment("The cool down between entity sending/receiving enemy alert sign. Unit: tick; 20 ticks = 1 second").defineInRange("enemy_alert_cd", 900, 0, Integer.MAX_VALUE);
         CONFIG_BUILDER.pop();
 
         CONFIG_BUILDER.push("disable_signs");

@@ -32,7 +32,7 @@ public class ServerToClient {
     public static void sendBurnSign(Entity entity){
         // Send a danger sign following a entity (on top of it)
         assert !entity.level.isClientSide();
-        Channel.INSTANCE.send(PacketDistributor.TRACKING_ENTITY_AND_SELF.with(() -> entity), new SignPacket(0, 1, 0, entity.getId(), Signs.BURN.getIndex()));
+        Channel.INSTANCE.send(PacketDistributor.TRACKING_ENTITY_AND_SELF.with(() -> entity), new SignPacket(0, 1.5, 0, entity.getId(), Signs.BURN.getIndex()));
     }
     public static void sendEnemyAlertSign(Entity entity){
         // Send a danger sign following a entity (on top of it)
